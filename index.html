@@ -2,59 +2,51 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK SMART GLASSES</title>
-    <style>
-        body { background: #050505; color: #00ffcc; font-family: sans-serif; margin: 0; padding: 20px; }
-        .language-selector { position: absolute; top: 20px; right: 20px; }
-        select { background: #111; color: #00ffcc; border: 1px solid #333; padding: 5px; cursor: pointer; }
-        .grid-3x3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 60px; }
-        .item { border: 1px solid #333; padding: 20px; text-align: center; }
-    </style>
+    <title>HK Smart Vision</title>
 </head>
 <body>
 
-<div class="language-selector">
-    <select id="langSelect" onchange="changeLanguage()">
+    <h1 id="title">HK Smart Vision</h1>
+    <h2 id="subtitle">일상을 연결하는 지능형 웨어러블 솔루션</h2>
+
+    <select id="langSelector" onchange="changeLanguage()">
         <option value="ko">한국어</option>
         <option value="en">English</option>
-        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+        <option value="zh">简体中文</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="ru">Русский</option>
+        <option value="pt">Português</option>
         <option value="ar">العربية</option>
         <option value="hi">हिन्दी</option>
-        <option value="es">Español</option>
-        <option value="pt">Português</option>
-        <option value="uk">Українська</option>
-        <option value="ja">日本語</option>
-        <option value="ru">Русский</option>
+        <option value="it">Italiano</option>
         <option value="vi">Tiếng Việt</option>
-        <option value="th">ภาษาไทย</option>
-        <option value="id">Bahasa Indonesia</option>
     </select>
-</div>
 
-<div class="grid-3x3" id="grid">
-    <div class="item" data-ko="뉴럴 인증" data-en="Neural Auth">뉴럴 인증</div>
-    <div class="item" data-ko="감성 분석" data-en="Sentiment Analysis">감성 분석</div>
-    <div class="item" data-ko="통합 모니터링" data-en="Monitoring">통합 모니터링</div>
-    <div class="item" data-ko="환경 동기화" data-en="Sync">환경 동기화</div>
-    <div class="item" data-ko="언어 번역" data-en="Translation">언어 번역</div>
-    <div class="item" data-ko="에너지 관리" data-en="Energy Mgmt">에너지 관리</div>
-    <div class="item" data-ko="투명 결제" data-en="Payment">투명 결제</div>
-    <div class="item" data-ko="경영 신호" data-en="Management">경영 신호</div>
-    <div class="item" data-ko="데이터 수집" data-en="Data">데이터 수집</div>
-</div>
+    <script>
+        const translations = {
+            ko: { title: "HK Smart Vision", subtitle: "일상을 연결하는 지능형 웨어러블 솔루션" },
+            en: { title: "HK Smart Vision", subtitle: "Intelligent wearable solution connecting daily life" },
+            ja: { title: "HK Smart Vision", subtitle: "日常を繋ぐインテリジェントウェアラブルソリューション" },
+            zh: { title: "HK Smart Vision", subtitle: "连接日常的智能可穿戴解决方案" },
+            es: { title: "HK Smart Vision", subtitle: "Solución inteligente vestible que conecta la vida diaria" },
+            fr: { title: "HK Smart Vision", subtitle: "Solution portable intelligente connectant la vie quotidienne" },
+            de: { title: "HK Smart Vision", subtitle: "Intelligente tragbare Lösung zur Vernetzung des Alltags" },
+            ru: { title: "HK Smart Vision", subtitle: "Интеллектуальное носимое решение для повседневной жизни" },
+            pt: { title: "HK Smart Vision", subtitle: "Solução vestível inteligente conectando a vida diária" },
+            ar: { title: "HK Smart Vision", subtitle: "حل ذكي قابل للارتداء يربط الحياة اليومية" },
+            hi: { title: "HK Smart Vision", subtitle: "दैनिक जीवन को जोड़ने वाला बुद्धिमान पहनने योग्य समाधान" },
+            it: { title: "HK Smart Vision", subtitle: "Soluzione indossabile intelligente che connette la vita quotidiana" },
+            vi: { title: "HK Smart Vision", subtitle: "Giải pháp đeo thông minh kết nối cuộc sống hàng ngày" }
+        };
 
-<script>
-    function changeLanguage() {
-        const lang = document.getElementById('langSelect').value;
-        const items = document.querySelectorAll('.item');
-        items.forEach(item => {
-            if (item.getAttribute('data-' + lang)) {
-                item.innerText = item.getAttribute('data-' + lang);
-            }
-        });
-    }
-</script>
-
+        function changeLanguage() {
+            const lang = document.getElementById('langSelector').value;
+            document.getElementById('title').innerText = translations[lang].title;
+            document.getElementById('subtitle').innerText = translations[lang].subtitle;
+        }
+    </script>
 </body>
-</html
+</html>
