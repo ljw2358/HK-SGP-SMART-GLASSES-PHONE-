@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HK Smart Vision</title>
     <style>
         body { 
@@ -11,51 +12,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 50px;
+            padding: 20px;
             margin: 0;
+            word-break: keep-all; /* 단어 깨짐 방지 */
         }
-        #langContainer {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-        }
-        #langSelector {
-            font-size: 1.5rem;
-            padding: 15px;
-            background-color: #4b0082;
-            color: #ffffff;
-            border: 3px solid #ffeb3b;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .content-wrapper {
-            max-width: 900px;
-            width: 100%;
-            text-align: center;
-        }
-        h1 { font-size: 5rem; color: #ffeb3b; margin-bottom: 20px; text-shadow: 0 0 20px rgba(255,235,59,0.5); }
-        h2 { font-size: 3rem; color: #ffffff; margin-bottom: 60px; }
-        
-        .menu-item { 
-            margin-bottom: 50px; 
-            border-bottom: 2px solid #d4aaff; 
-            padding-bottom: 20px; 
-            text-align: left;
-            font-size: 2rem; 
-        }
-        .menu-name { 
-            font-weight: bold; 
-            color: #ffeb3b; 
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-        #footer {
-            margin-top: 100px;
-            font-size: 2rem;
-            color: #d4aaff;
-            font-weight: bold;
-        }
+        #langContainer { position: absolute; top: 20px; right: 20px; }
+        #langSelector { font-size: 1.2rem; padding: 10px; background-color: #4b0082; color: #ffffff; border: 2px solid #ffeb3b; border-radius: 8px; }
+        .content-wrapper { max-width: 90%; width: 600px; text-align: center; }
+        h1 { font-size: 2.5rem; color: #ffeb3b; margin-top: 50px; }
+        h2 { font-size: 1.5rem; color: #ffffff; margin-bottom: 40px; }
+        .menu-item { margin-bottom: 30px; text-align: left; font-size: 1.2rem; line-height: 1.5; }
+        .menu-name { font-weight: bold; color: #ffeb3b; font-size: 1.4rem; display: block; }
+        #footer { margin-top: 50px; font-size: 1.2rem; color: #d4aaff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -65,16 +33,7 @@
             <option value="ko">한국어</option>
             <option value="en">English</option>
             <option value="ja">日本語</option>
-            <option value="zh">简体中文</option>
             <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="ru">Русский</option>
-            <option value="pt">Português</option>
-            <option value="ar">العربية</option>
-            <option value="hi">हिन्दी</option>
-            <option value="it">Italiano</option>
-            <option value="vi">Tiếng Việt</option>
         </select>
     </div>
 
@@ -90,36 +49,36 @@
             ko: {
                 t: "HK Smart Vision", s: "일상을 연결하는 지능형 웨어러블 솔루션",
                 f: [
-                    {n: "Neural Auth", d: "뇌파 또는 생체 신호를 활용한 가장 안전한 본인 인증 시스템입니다."},
-                    {n: "Sync", d: "모든 기기와 끊김 없는 데이터 연결 및 환경 설정을 유지합니다."},
-                    {n: "Payment", d: "시선과 제스처만으로 이루어지는 차세대 결제 경험을 제공합니다."},
-                    {n: "Sentiment Analysis", d: "대화 상대의 감정을 실시간으로 파악하여 최적의 소통을 돕습니다."},
-                    {n: "Translation", d: "언어 장벽 없이 전 세계 누구와도 자유롭게 대화하세요."},
-                    {n: "Management", d: "글래스의 모든 상태와 연결 기기를 한눈에 관리합니다."},
-                    {n: "Monitoring", d: "기기 가동 상태와 보안 시스템을 실시간으로 확인합니다."},
-                    {n: "Energy Mgmt", d: "스마트한 배터리 최적화로 더 오랜 시간 사용 가능합니다."},
-                    {n: "Data", d: "사용 패턴을 학습하여 더욱 개인화된 인사이트를 제공합니다."}
+                    {n: "Neural Auth (생체 인증)", d: "뇌파 또는 생체 신호를 활용한 가장 안전한 본인 인증 시스템입니다."},
+                    {n: "Sync (실시간 동기화)", d: "모든 기기와 끊김 없는 데이터 연결 및 환경 설정을 유지합니다."},
+                    {n: "Payment (간편 결제)", d: "시선과 제스처만으로 이루어지는 차세대 결제 경험을 제공합니다."},
+                    {n: "Sentiment Analysis (감정 분석)", d: "대화 상대의 감정을 실시간으로 파악하여 최적의 소통을 돕습니다."},
+                    {n: "Translation (실시간 번역)", d: "언어 장벽 없이 전 세계 누구와도 자유롭게 대화하세요."},
+                    {n: "Management (통합 관리)", d: "글래스의 모든 상태와 연결 기기를 한눈에 관리합니다."},
+                    {n: "Monitoring (상태 모니터링)", d: "기기 가동 상태와 보안 시스템을 실시간으로 확인합니다."},
+                    {n: "Energy Mgmt (전력 효율화)", d: "스마트한 배터리 최적화로 더 오랜 시간 사용 가능합니다."},
+                    {n: "Data (데이터 분석)", d: "사용 패턴을 학습하여 더욱 개인화된 인사이트를 제공합니다."}
                 ]
             },
             en: {
                 t: "HK Smart Vision", s: "Intelligent wearable solution connecting daily life",
                 f: [
-                    {n: "Neural Auth", d: "Safest authentication system using brainwaves or biometrics."},
-                    {n: "Sync", d: "Seamless data connectivity and settings across all devices."},
-                    {n: "Payment", d: "Next-gen payment experience using only gaze and gestures."},
-                    {n: "Sentiment Analysis", d: "Real-time analysis of conversational partners for optimal communication."},
-                    {n: "Translation", d: "Communicate freely worldwide without language barriers."},
-                    {n: "Management", d: "Manage all glasses status and connected devices at a glance."},
-                    {n: "Monitoring", d: "Real-time check of device operations and security systems."},
-                    {n: "Energy Mgmt", d: "Smart battery optimization for longer usage time."},
-                    {n: "Data", d: "Provides personalized insights by learning usage patterns."}
+                    {n: "Neural Auth (Biometric)", d: "Safest authentication system using brainwaves or biometrics."},
+                    {n: "Sync (Synchronization)", d: "Seamless data connectivity and settings across all devices."},
+                    {n: "Payment (Easy Payment)", d: "Next-gen payment experience using only gaze and gestures."},
+                    {n: "Sentiment Analysis (Emotion)", d: "Real-time analysis of conversational partners for optimal communication."},
+                    {n: "Translation (Translation)", d: "Communicate freely worldwide without language barriers."},
+                    {n: "Management (Management)", d: "Manage all glasses status and connected devices at a glance."},
+                    {n: "Monitoring (Monitoring)", d: "Real-time check of device operations and security systems."},
+                    {n: "Energy Mgmt (Power Opt)", d: "Smart battery optimization for longer usage time."},
+                    {n: "Data (Data Analysis)", d: "Provides personalized insights by learning usage patterns."}
                 ]
             }
         };
 
         function changeLanguage() {
             const lang = document.getElementById('langSelector').value;
-            const data = contentData[lang] || contentData['en'];
+            const data = contentData[lang] || contentData['ko'];
             document.getElementById('title').innerText = data.t;
             document.getElementById('subtitle').innerText = data.s;
             let html = "";
