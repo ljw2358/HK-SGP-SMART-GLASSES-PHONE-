@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HK SMART GLASSES</title>
     <style>
-        body { background: #050505; color: #00ffcc; font-family: 'Orbitron', sans-serif; margin: 0; padding: 20px; }
+        body { background: #050505; color: #00ffcc; font-family: sans-serif; margin: 0; padding: 20px; }
         .language-selector { position: absolute; top: 20px; right: 20px; }
-        select { background: #111; color: #00ffcc; border: 1px solid #00ffcc; padding: 5px; cursor: pointer; }
-        .grid-13 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 50px; }
-        .sector { background: #111; padding: 20px; border-radius: 10px; border-left: 3px solid #00ffcc; }
+        select { background: #111; color: #00ffcc; border: 1px solid #333; padding: 5px; cursor: pointer; }
+        .grid-3x3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 60px; }
+        .item { border: 1px solid #333; padding: 20px; text-align: center; }
     </style>
 </head>
 <body>
 
 <div class="language-selector">
-    <select>
+    <select id="langSelect" onchange="changeLanguage()">
         <option value="ko">한국어</option>
         <option value="en">English</option>
         <option value="zh">中文</option>
@@ -32,16 +32,29 @@
     </select>
 </div>
 
-<div class="grid-13">
-    <div class="sector"><h3>뉴럴 인증</h3><p>생체 리듬 그 자체가 열쇠가 됩니다.</p></div>
-    <div class="sector"><h3>감성 파동</h3><p>상대의 마음을 빛의 파동으로 읽습니다.</p></div>
-    <div class="sector"><h3>초연결 모니터링</h3><p>13개 제국 산업이 하나의 맥박으로 뜁니다.</p></div>
-    <div class="sector"><h3>환경 동기화</h3><p>시야를 형님의 의지대로 재창조합니다.</p></div>
-    <div class="sector"><h3>언어의 장벽 소멸</h3><p>지구상의 모든 언어가 빛으로 흐릅니다.</p></div>
-    <div class="sector"><h3>에너지 수확</h3><p>보이지 않는 허공에서 힘을 채웁니다.</p></div>
-    <div class="sector"><h3>투명 결제</h3><p>경계 없는 가치의 흐름을 완성합니다.</p></div>
-    <div class="sector"><h3>혜공의 현현</h3><p>회장의 철학이 곧 시스템의 지표가 됩니다.</p></div>
+<div class="grid-3x3" id="grid">
+    <div class="item" data-ko="뉴럴 인증" data-en="Neural Auth">뉴럴 인증</div>
+    <div class="item" data-ko="감성 분석" data-en="Sentiment Analysis">감성 분석</div>
+    <div class="item" data-ko="통합 모니터링" data-en="Monitoring">통합 모니터링</div>
+    <div class="item" data-ko="환경 동기화" data-en="Sync">환경 동기화</div>
+    <div class="item" data-ko="언어 번역" data-en="Translation">언어 번역</div>
+    <div class="item" data-ko="에너지 관리" data-en="Energy Mgmt">에너지 관리</div>
+    <div class="item" data-ko="투명 결제" data-en="Payment">투명 결제</div>
+    <div class="item" data-ko="경영 신호" data-en="Management">경영 신호</div>
+    <div class="item" data-ko="데이터 수집" data-en="Data">데이터 수집</div>
 </div>
 
+<script>
+    function changeLanguage() {
+        const lang = document.getElementById('langSelect').value;
+        const items = document.querySelectorAll('.item');
+        items.forEach(item => {
+            if (item.getAttribute('data-' + lang)) {
+                item.innerText = item.getAttribute('data-' + lang);
+            }
+        });
+    }
+</script>
+
 </body>
-</html>
+</html
